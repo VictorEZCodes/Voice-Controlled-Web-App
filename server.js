@@ -6,7 +6,7 @@ const axios = require('axios');
 const { processCommand } = require('./witAI.js');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON requests
 app.use(express.json());
