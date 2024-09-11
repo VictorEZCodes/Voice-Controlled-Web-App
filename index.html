@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Controlled Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=RESPONSIVE_VOICE_KEY"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Voice-Controlled Web App</h1>
+
+        <div class="theme-switcher">
+            <label for="themeSwitch" class="toggle"></label>
+            <input type="checkbox" id="themeSwitch" checked />
+        </div>
+    </header>
+
+    <main>
+        <section class="control-panel">
+            <div class="listening-controls">
+                <button id="startListening" onclick="toggleListening(this)">🎙 Start Listening</button>
+                <input type="text" id="textInput" placeholder="Type your command...">
+                <button id="submitTextInput">Enter</button>
+            </div>
+
+            <div class="image-controls">
+                <label for="imageInput" class="custom-file-label">Choose File</label>
+                <input type="file" id="imageInput" accept="image/*">
+                <button id="detectObjects">📷 Detect Objects</button>
+            </div> <br>
+
+            <div class="check-breach-panel">
+                <input type="email" id="emailInput" placeholder="Enter your email...">
+                <button id="checkBreachButton">Check Email Breach</button>
+            </div>
+        </section>
+
+        <section class="image-display">
+            <img id="placeholderImage">
+            <img id="uploadedImage" src="" alt="Uploaded Image" style="display: none;">
+        </section>
+
+        <section class="output-panel">
+            <div id="output"></div>
+            <div id="sentimentOutput"></div> <!-- Removed initial sentiment text -->
+            <div id="content"></div>
+        </section>
+
+        <section class="map-panel">
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- FOOTER GOES HERE -->
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+
+</html>
