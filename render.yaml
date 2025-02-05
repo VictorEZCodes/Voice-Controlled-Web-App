@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: voice-assistant
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: WIT_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: RESPONSIVE_VOICE_KEY
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: API_NINJAS_KEY
+        sync: false
